@@ -1,0 +1,5 @@
+ob_pairfony:
+    resource: "@ObPairfonyBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
