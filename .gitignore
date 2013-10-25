@@ -1,0 +1,17 @@
+/app/bootstrap.php.cache
+/app/phpunit.xml
+/app/config/parameters.yml
+
+/app/cache/*
+/app/logs/*
+!app/cache/.gitkeep
+!app/logs/.gitkeep
+
+/web/bundles/
+
+/build/
+/vendor/
+/bin/
+
+/composer.phar
+/php-cs-fixer.phar
