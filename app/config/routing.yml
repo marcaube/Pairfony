@@ -1,3 +1,13 @@
+hwi_oauth_redirect:
+    resource: "@HWIOAuthBundle/Resources/config/routing/redirect.xml"
+    prefix:   /connect
+
+github_login:
+    pattern: /login/check-github
+
+logout:
+   pattern:   /logout
+
 ob_pairfony:
     resource: "@ObPairfonyBundle/Controller/"
     type:     annotation

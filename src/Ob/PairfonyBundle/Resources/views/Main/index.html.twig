@@ -52,7 +52,14 @@
     </style>
 </head>
 <body>
-<h1>Oh hai!</h1>
+<h1>Oh hai{% if app.user is not null %} {{ app.user.username }} {% endif %}!</h1>
 <p>Nothing to see yet, come back later...</p>
+<p>
+    {% if app.user is not null %}
+        <a href="{{ path('logout') }}">Logout</a>
+    {% else %}
+        <a href="connect/github">Sign in with github</a>
+    {% endif %}
+</p>
 </body>
 </html>
