@@ -1,65 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>Pairfony - where passionate PHP developers come to perfect their craft</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
+    <head>
+        <meta charset="utf-8">
+        <title>Pairfony - where passionate PHP developers come to perfect their craft</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        * {
-            margin: 0;
-            line-height: 1.5;
-        }
+        {% stylesheets '@ObPairfonyBundle/Resources/public/css/*' output='css/styles.css' %}
+            <link rel="stylesheet" href="{{ asset_url }}" />
+        {% endstylesheets %}
+    </head>
+    <body>
+        <div class="pf-container">
+            <img class="pf-logo" src="/bundles/obpairfony/img/pairfony-header.png" alt=""/>
 
-        html {
-            color: #888;
-            font-family: sans-serif;
-            text-align: center;
-        }
+            <p class="pf-tagline">
+                Pairfony is the place where passionate PHP developers of all levels come to meet and perfect their craft.
+            </p>
 
-        body {
-            left: 50%;
-            margin: -43px 0 0 -150px;
-            position: absolute;
-            top: 50%;
-            width: 300px;
-        }
+            {% if app.user is not null %}
+                <a id="github-button" class="pf-button" href="{{ path('logout') }}">
+                    Logout
+                </a>
+            {% else %}
+                <a id="github-button" class="pf-button" href="connect/github">
+                    Sign in with github
+                </a>
+            {% endif %}
 
-        h1 {
-            color: #555;
-            font-size: 2em;
-            font-weight: 400;
-        }
-
-        p {
-            line-height: 1.2;
-        }
-
-        @media only screen and (max-width: 270px) {
-
-            body {
-                margin: 10px auto;
-                position: static;
-                width: 95%;
-            }
-
-            h1 {
-                font-size: 1.5em;
-            }
-
-        }
-
-    </style>
-</head>
-<body>
-<h1>Oh hai{% if app.user is not null %} {{ app.user.username }} {% endif %}!</h1>
-<p>Nothing to see yet, come back later...</p>
-<p>
-    {% if app.user is not null %}
-        <a href="{{ path('logout') }}">Logout</a>
-    {% else %}
-        <a href="connect/github">Sign in with github</a>
-    {% endif %}
-</p>
-</body>
+            <div class="pf-beta">
+                <h1>Oh hai{% if app.user is not null %} <span class="blue">{{ app.user.username }}</span> {% endif %}!</h1>
+                <p>Nothing to see yet, come back later...</p>
+            </div>
+        </div>
+    </body>
 </html>

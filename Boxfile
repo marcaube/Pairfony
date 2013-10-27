@@ -29,6 +29,7 @@ web1:
     after_build:
         - "cp app/config/parameters.pagoda.yml app/config/parameters.yml"
         - "curl -s http://getcomposer.org/installer | php -- --quiet; php composer.phar install -n"
+        - "php app/console --env=prod --no-debug assets:install web"
         - "php app/console --env=prod --no-debug assetic:dump -n"
     before_deploy:
         - "php app/console --env=prod --no-debug cache:clear --no-warmup"

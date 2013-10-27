@@ -10,5 +10,5 @@
 # TECHNOLOGY COLOPHON
 
     Standards: <HTML5, CSS3>
-    Components: Symfony, H5BP
+    Components: Symfony, H5BP, Less
     Software: PhpStorm, CodeKit, Git, Composer
