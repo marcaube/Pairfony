@@ -22,7 +22,7 @@
                     Logout
                 </a>
             {% else %}
-                <a id="github-button" class="pf-button" href="connect/github">
+                <a id="github-button" class="pf-button" href="{{ hwi_oauth_login_url('github') }}">
                     Sign in with github
                 </a>
             {% endif %}

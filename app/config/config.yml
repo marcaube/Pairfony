@@ -2,6 +2,10 @@ imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
     - { resource: vendor/config_hwi.yml }
+    - { resource: vendor/config_fos.yml }
+
+parameters:
+    hwi_oauth.user.provider.fosub_bridge.class: Ob\PairfonyBundle\Security\OauthProvider
 
 framework:
     #esi:             ~

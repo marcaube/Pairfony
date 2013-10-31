@@ -14,5 +14,5 @@ parameters:
     locale:            en
     secret:            ThisTokenIsNotSoSecretChangeIt
 
-    github_client_id:         %github.client.id%
-    github_client_secret:     %github.client.secret%
+    github_client_id:     ~
+    github_client_secret: ~

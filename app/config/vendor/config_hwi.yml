@@ -20,3 +20,8 @@ hwi_oauth:
             scope:         "user:email"
             options:
                 csrf:  true
+
+    fosub:
+        username_iterations: 30
+        properties:
+            github: githubId
