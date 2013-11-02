@@ -1,0 +1,14 @@
+parameters:
+    ob_pairfony.github.class: Github\Client
+    ob_pairfony.login_listener.class: Ob\PairfonyBundle\Listener\LoginListener
+
+services:
+    ob_pairfony.github:
+        class: %ob_pairfony.github.class%
+
+    ob_pairfony.login_listener:
+        class: %ob_pairfony.login_listener.class%
+        arguments: [@security.context, @doctrine.orm.entity_manager, @ob_pairfony.github]
+        tags:
+            - { name: 'kernel.event_listener', event: 'security.interactive_login' }
+
