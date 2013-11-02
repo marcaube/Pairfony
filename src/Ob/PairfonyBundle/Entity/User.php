@@ -96,7 +96,7 @@ class User extends BaseUser
      */
     public function getAvatarUrl()
     {
-        return $this->avatarUrl;
+        return $this->avatarUrl ? : 'http://lorempixel.com/g/80/80/technics/';
     }
 
     /**

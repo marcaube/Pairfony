@@ -14,6 +14,11 @@ class MainController extends Controller
      */
     public function indexAction()
     {
-        return array();
+        $entityManager = $this->get('doctrine')->getManager();
+        $users = $entityManager->getRepository('Ob\PairfonyBundle\Entity\User')->findAll();
+
+        return array(
+            'users' => $users
+        );
     }
 }

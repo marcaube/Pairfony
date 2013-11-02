@@ -1,0 +1,17 @@
+{% if entities|length > 0 %}
+    <div class="pf-userlist">
+        <h2>Those are the curious one...</h2>
+
+        {% for entity in entities %}
+            <div class="media">
+                <div class="media__img">
+                    <img src="{{ entity.avatarUrl }}" alt="{{ entity.username }}'s github avatar"/>
+                </div>
+                <div class="media__content">
+                    <strong><a href="{{ entity.githubUrl }}">{{ entity.username }}</a></strong><br>
+                    Location: {{ entity.location }}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endif %}
