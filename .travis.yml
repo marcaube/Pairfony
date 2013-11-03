@@ -2,11 +2,13 @@ language: php
 
 php:
   - 5.3
-  - 5.3.8
   - 5.4
-  - 5.4.14
 
 before_script:
+  - cp app/config/parameters.yml.dist app/config/parameters.yml
   - composer install -n
+  - php app/console --env=test doctrine:database:drop --force  > /dev/null
+  - php app/console --env=test doctrine:database:create  > /dev/null
+  - php app/console --env=test doctrine:schema:create  > /dev/null
 
 script: phpunit --coverage-text -c app
