@@ -7,8 +7,7 @@ php:
 before_script:
   - cp app/config/parameters.yml.dist app/config/parameters.yml
   - composer install -n
-  - php app/console --env=test doctrine:database:drop --force  > /dev/null
-  - php app/console --env=test doctrine:database:create  > /dev/null
-  - php app/console --env=test doctrine:schema:create  > /dev/null
+  - php app/console --env=test doctrine:database:create
+  - php app/console --env=test doctrine:schema:create
 
 script: phpunit --coverage-text -c app
