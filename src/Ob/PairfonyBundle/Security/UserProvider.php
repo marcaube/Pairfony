@@ -5,7 +5,7 @@ namespace Ob\PairfonyBundle\Security;
 use HWI\Bundle\OAuthBundle\OAuth\Response\UserResponseInterface;
 use HWI\Bundle\OAuthBundle\Security\Core\User\FOSUBUserProvider;
 
-class OauthProvider extends FOSUBUserProvider
+class UserProvider extends FOSUBUserProvider
 {
     public function loadUserByOAuthUserResponse(UserResponseInterface $response)
     {
