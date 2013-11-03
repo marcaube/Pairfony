@@ -5,6 +5,8 @@ perfect their craft.
 
 If you want to meet other professionals that care about well-crafted software, you've come to the right place!
 
+[![Build Status](https://travis-ci.org/marcaube/Pairfony.png?branch=master)](https://travis-ci.org/marcaube/Pairfony)
+
 
 ## Installation
 
